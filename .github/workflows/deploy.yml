@@ -22,7 +22,7 @@ jobs:
       run: docker push hammadrazzaq2k/my-portfolio:latest
 
     - name: Deploy to AWS
-      uses: appleboy/ssh-action@master
+      uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ secrets.AWS_HOST }}
         username: ubuntu

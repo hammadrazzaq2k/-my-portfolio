@@ -1,3 +1,26 @@
+name: Deploy Portfolio
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Get code
+      uses: actions/checkout@v4
+
+    - name: Login to Docker Hub
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+    - name: Build Docker image
+      run: docker build -t hammadrazzaq2k/my-portfolio:latest .
+
+    - name: Push to Docker Hub
+      run: docker push hammadrazzaq2k/my-portfolio:latest
+
     - name: Deploy to AWS
       uses: appleboy/ssh-action@v1.0.3
       with:

@@ -22,13 +22,16 @@ jobs:
       run: docker push hammadrazzaq2k/my-portfolio:latest
 
     - name: Deploy to AWS
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-        host: ${{ secrets.AWS_HOST }}
-        username: ubuntu
-        key: ${{ secrets.AWS_KEY }}
-        script: |
-          docker pull hammadrazzaq2k/my-portfolio:latest
-          docker stop portfolio || true
-          docker rm portfolio || true
-          docker run -d -p 80:80 --name portfolio hammadrazzaq2k/my-portfolio:latest
+      env:
+        PRIVATE_KEY: ${{ secrets.AWS_KEY }}
+        HOST: ${{ secrets.AWS_HOST }}
+      run: |
+        echo "$PRIVATE_KEY" > private_key.pem
+        chmod 400 private_key.pem
+        ssh -i private_key.pem -o StrictHostKeyChecking=no ubuntu@$HOST "
+          sudo docker pull hammadrazzaq2k/my-portfolio:latest &&
+          sudo docker stop portfolio || true &&
+          sudo docker rm portfolio || true &&
+          sudo docker run -d -p 80:80 --name portfolio hammadrazzaq2k/my-portfolio:latest
+        "
+        rm private_key.pem

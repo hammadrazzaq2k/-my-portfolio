@@ -6,50 +6,422 @@
     <title>Hammad Razzaq - DevOps Engineer</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; background: #0a0a0a; color: white; }
-        header { background: #1a1a2e; padding: 20px; text-align: center; }
-        h1 { color: #00d4ff; font-size: 2.5em; }
-        .subtitle { color: #888; margin-top: 10px; }
-        .skills { display: flex; justify-content: center; gap: 15px; margin: 30px; flex-wrap: wrap; }
-        .skill { background: #16213e; padding: 10px 20px; border-radius: 20px; color: #00d4ff; }
-        .projects { padding: 30px; max-width: 800px; margin: 0 auto; }
-        .project { background: #16213e; padding: 20px; border-radius: 10px; margin: 15px 0; }
-        .project h3 { color: #00d4ff; }
-        footer { text-align: center; padding: 20px; color: #888; }
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0f0f1a;
+            color: #fff;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15,15,26,0.9);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul a:hover { color: #00d4ff; }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0f0f1a, #1a1a2e);
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span { color: #00d4ff; }
+
+        .hero p {
+            font-size: 1.3em;
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        .hero .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #00d4ff;
+            color: #000;
+        }
+
+        .btn-secondary {
+            border: 2px solid #00d4ff;
+            color: #00d4ff;
+        }
+
+        .btn:hover { transform: translateY(-3px); }
+
+        /* Skills Section */
+        .section {
+            padding: 80px 50px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            color: #00d4ff;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #1a1a2e;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #00d4ff33;
+            transition: all 0.3s;
+        }
+
+        .skill-card:hover {
+            border-color: #00d4ff;
+            transform: translateY(-5px);
+        }
+
+        .skill-card .icon { font-size: 2em; margin-bottom: 10px; }
+        .skill-card p { color: #888; font-size: 0.9em; }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #1a1a2e;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #00d4ff33;
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: #00d4ff;
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: #00d4ff;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #888;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #00d4ff22;
+            color: #00d4ff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: #888;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .stat {
+            background: #1a1a2e;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #00d4ff33;
+        }
+
+        .stat h3 {
+            font-size: 2em;
+            color: #00d4ff;
+        }
+
+        .stat p { color: #888; }
+
+        /* Contact Section */
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            background: #1a1a2e;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #00d4ff33;
+            transition: all 0.3s;
+        }
+
+        .contact-link:hover {
+            border-color: #00d4ff;
+            color: #00d4ff;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #888;
+            border-top: 1px solid #1a1a2e;
+        }
+
+        footer span { color: #00d4ff; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Hammad Razzaq</h1>
-        <p class="subtitle">Junior DevOps Engineer | Netherlands</p>
-    </header>
 
-    <div class="skills">
-        <span class="skill">Linux</span>
-        <span class="skill">Git & GitHub</span>
-        <span class="skill">Docker</span>
-        <span class="skill">AWS</span>
-        <span class="skill">CI/CD</span>
-    </div>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Hammad Razzaq</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <div class="projects">
-        <h2 style="color:#00d4ff; margin-bottom:20px">Projects</h2>
-        
-        <div class="project">
-            <h3>Goat Insights - AI Platform</h3>
-            <p>Full stack AI app containerized with Docker</p>
-            <p>Backend: Python FastAPI | Frontend: Next.js</p>
+    <!-- Hero -->
+    <section class="hero">
+        <div>
+            <h1>Hi, I'm <span>Hammad Razzaq</span></h1>
+            <p>Junior DevOps Engineer | Netherlands</p>
+            <p style="font-size:1em; margin-bottom:30px">
+                Linux • Docker • AWS • CI/CD • Terraform
+            </p>
+            <div class="buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
         </div>
+    </section>
 
-        <div class="project">
-            <h3>DevOps Learning Journey</h3>
-            <p>Linux, Git, Docker, AWS, CI/CD</p>
-            <p>Hosted on AWS EC2</p>
+    <!-- About -->
+    <section id="about" style="padding: 80px 50px; background: #1a1a2e;">
+        <div style="max-width:1100px; margin:0 auto;">
+            <h2 style="font-size:2em; color:#00d4ff; margin-bottom:40px; text-align:center;">
+                About Me
+            </h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a passionate DevOps Engineer based in Netherlands, 
+                    focused on automating infrastructure and streamlining 
+                    deployment processes.</p>
+                    <p>Currently learning and building projects with Linux, 
+                    Docker, AWS, Terraform, and CI/CD pipelines.</p>
+                    <p>Open to DevOps internship opportunities in Netherlands!</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>3+</h3>
+                        <p>Projects Built</p>
+                    </div>
+                    <div class="stat">
+                        <h3>6+</h3>
+                        <p>Tools Learned</p>
+                    </div>
+                    <div class="stat">
+                        <h3>1+</h3>
+                        <p>Month Learning</p>
+                    </div>
+                    <div class="stat">
+                        <h3>NL</h3>
+                        <p>Based In</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
+    <!-- Skills -->
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="icon">🐧</div>
+                <h3>Linux</h3>
+                <p>Bash, Commands, Scripts</p>
+            </div>
+            <div class="skill-card">
+                <div class="icon">🐙</div>
+                <h3>Git & GitHub</h3>
+                <p>Version Control</p>
+            </div>
+            <div class="skill-card">
+                <div class="icon">🐳</div>
+                <h3>Docker</h3>
+                <p>Containers, Compose</p>
+            </div>
+            <div class="skill-card">
+                <div class="icon">☁️</div>
+                <h3>AWS</h3>
+                <p>EC2, S3, IAM, VPC</p>
+            </div>
+            <div class="skill-card">
+                <div class="icon">⚙️</div>
+                <h3>CI/CD</h3>
+                <p>GitHub Actions</p>
+            </div>
+            <div class="skill-card">
+                <div class="icon">🏗️</div>
+                <h3>Terraform</h3>
+                <p>Infrastructure as Code</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" style="padding: 80px 50px; background: #1a1a2e;">
+        <div style="max-width:1100px; margin:0 auto;">
+            <h2 style="font-size:2em; color:#00d4ff; margin-bottom:40px; text-align:center;">
+                Projects
+            </h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>🐐 Goat Insights - AI Platform</h3>
+                    <p>Full stack AI application for goat breed 
+                    classification and price prediction. 
+                    Containerized with Docker and Docker Compose.</p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Next.js</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>🚀 Portfolio CI/CD Pipeline</h3>
+                    <p>Automated deployment pipeline for this 
+                    portfolio website. Pushes to GitHub trigger 
+                    automatic build and deployment to AWS EC2.</p>
+                    <div class="tags">
+                        <span class="tag">GitHub Actions</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">AWS EC2</span>
+                        <span class="tag">Nginx</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>🏗️ AWS Infrastructure with Terraform</h3>
+                    <p>Complete AWS infrastructure provisioned 
+                    using Terraform. EC2 instances, Security Groups, 
+                    and S3 buckets managed as code.</p>
+                    <div class="tags">
+                        <span class="tag">Terraform</span>
+                        <span class="tag">AWS</span>
+                        <span class="tag">EC2</span>
+                        <span class="tag">S3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <div class="contact-links">
+            <a href="https://github.com/hammadrazzaq2k" 
+               class="contact-link" target="_blank">
+                🐙 GitHub
+            </a>
+            <a href="https://linkedin.com/in/hammadrazzaq2k" 
+               class="contact-link" target="_blank">
+                💼 LinkedIn
+            </a>
+            <a href="mailto:hammadrazzaq2k@gmail.com" 
+               class="contact-link">
+                📧 Email
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>Deployed automatically with CI/CD on AWS! 🚀</p>
+        <p>Built with ❤️ by <span>Hammad Razzaq</span> | 
+        Deployed on <span>AWS</span> with <span>Docker</span> & 
+        <span>CI/CD</span></p>
     </footer>
+
 </body>
 </html>

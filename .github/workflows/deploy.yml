@@ -26,7 +26,7 @@ jobs:
       with:
         host: ${{ secrets.AWS_HOST }}
         username: ubuntu
-        password: ${{ secrets.AWS_PASSWORD }}
+        key: ${{ secrets.SERVER_SSH_KEY }}
         script: |
           sudo docker pull hammadrazzaq2k/my-portfolio:latest
           sudo docker stop portfolio || true

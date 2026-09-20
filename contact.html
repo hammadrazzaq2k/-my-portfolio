@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Hammad Razzaq</title>
+  <meta name="description" content="Contact Hammad Razzaq, Junior DevOps Engineer, by email, GitHub or LinkedIn.">
+  <meta name="theme-color" content="#0a0f1e">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header"></header>
+
+  <main id="main">
+
+    <section class="page-head">
+      <div class="container">
+        <p class="path rise" style="--i:0">~/contact</p>
+        <h1 class="rise" style="--i:1">Let's talk</h1>
+        <p class="lead rise" style="--i:2">Got a junior DevOps role, a project or a question about my work? Send a message and I'll reply by email.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container contact-grid">
+
+        <!-- Direct links -->
+        <ul class="contact-links" data-stagger>
+          <li>
+            <a class="card contact-link" href="mailto:hammadrazzaq2k@gmail.com">
+              <span class="contact-icon" data-icon="mail"></span>
+              <span class="contact-text">
+                <span class="contact-label">Email</span><br>
+                <span class="contact-value">hammadrazzaq2k@gmail.com</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="card contact-link" href="https://github.com/hammadrazzaq2k" target="_blank" rel="noopener">
+              <span class="contact-icon" data-icon="github"></span>
+              <span class="contact-text">
+                <span class="contact-label">GitHub</span><br>
+                <span class="contact-value">github.com/hammadrazzaq2k</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="card contact-link" href="https://www.linkedin.com/in/hammad-razzaq-2501302b8" target="_blank" rel="noopener">
+              <span class="contact-icon" data-icon="linkedin"></span>
+              <span class="contact-text">
+                <span class="contact-label">LinkedIn</span><br>
+                <span class="contact-value">linkedin.com/in/hammad-razzaq-2501302b8</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <div class="card contact-link">
+              <span class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              </span>
+              <span class="contact-text">
+                <span class="contact-label">Location</span><br>
+                <span class="contact-value">Netherlands (originally from Pakistan)</span>
+              </span>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Form -->
+        <div class="card form-card reveal">
+          <div class="terminal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="terminal-title">compose — new message</span>
+            </div>
+          </div>
+
+          <!-- Works with JavaScript (builds a mailto link) and falls back to a plain mailto action without it -->
+          <form class="contact-form" id="contact-form" action="mailto:hammadrazzaq2k@gmail.com" method="post" enctype="text/plain">
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+              </div>
+              <div class="field">
+                <label for="email">Your email</label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="subject">Subject <span class="opt">(optional)</span></label>
+              <input id="subject" name="subject" type="text" placeholder="Junior DevOps role, collaboration, question">
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" maxlength="1500" placeholder="Tell me about the role or project." required></textarea>
+            </div>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Open in my email app</button>
+              <button class="btn btn-ghost" type="button" id="copy-email">Copy email address</button>
+            </div>
+            <p class="form-note">This opens a pre-filled draft in your email app, so nothing is sent until you press send there.</p>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

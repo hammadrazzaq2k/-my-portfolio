@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects | Hammad Razzaq</title>
+  <meta name="description" content="DevOps projects by Hammad Razzaq: a GitHub Actions to Docker Hub to AWS EC2 pipeline, AWS infrastructure with Terraform, and a Dockerized Next.js and FastAPI platform.">
+  <meta name="theme-color" content="#0a0f1e">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header"></header>
+
+  <main id="main">
+
+    <section class="page-head">
+      <div class="container">
+        <p class="path rise" style="--i:0">~/projects</p>
+        <h1 class="rise" style="--i:1">Projects</h1>
+        <p class="lead rise" style="--i:2">Three hands-on builds covering pipelines, cloud infrastructure and containers. Each one links to its code on GitHub.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="projects-grid" data-stagger>
+
+          <!-- 1. Portfolio CI/CD Pipeline -->
+          <!-- TODO: replace the GitHub link below with the exact repository URL -->
+          <article class="card project" id="portfolio-cicd">
+            <div class="project-visual">
+              <div class="terminal" role="img" aria-label="Pipeline: push, build image, Docker Hub, AWS EC2">
+                <div class="terminal-bar">
+                  <span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span class="terminal-title">deploy.yml</span>
+                </div>
+                <div class="terminal-body" aria-hidden="true">
+                  <div class="t-line"><span class="t-key">on</span>: <span class="t-str">push</span> <span class="t-cmt"># main</span></div>
+                  <div class="t-line"><span class="t-key">jobs</span>:</div>
+                  <div class="t-line">  <span class="t-ok">build</span> → <span class="t-ok">push</span> → <span class="t-ok">deploy</span></div>
+                  <div class="t-line t-dim">  Docker Hub · AWS EC2</div>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Portfolio CI/CD Pipeline</h3>
+              <div>
+                <h4>What I built</h4>
+                <p>A pipeline that deploys this portfolio automatically. Every push to GitHub triggers a GitHub Actions workflow that builds a Docker image, pushes it to Docker Hub and updates the running container on an AWS EC2 server. No manual steps.</p>
+              </div>
+              <div>
+                <h4>Technologies</h4>
+                <div class="tags"><span class="tag">GitHub Actions</span><span class="tag">Docker</span><span class="tag">Docker Hub</span><span class="tag">AWS EC2</span><span class="tag">CI/CD</span></div>
+              </div>
+              <div class="project-foot">
+                <a class="btn btn-ghost" href="https://github.com/hammadrazzaq2k" target="_blank" rel="noopener"><span data-icon="github"></span>View on GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. AWS Infrastructure with Terraform -->
+          <!-- TODO: replace the GitHub link below with the exact repository URL -->
+          <article class="card project" id="terraform-aws">
+            <div class="project-visual">
+              <div class="terminal" role="img" aria-label="Terraform snippet defining an EC2 instance with a security group and user_data script">
+                <div class="terminal-bar">
+                  <span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span class="terminal-title">main.tf</span>
+                </div>
+                <div class="terminal-body" aria-hidden="true">
+                  <div class="t-line"><span class="t-key">resource</span> <span class="t-str">"aws_instance"</span> <span class="t-str">"app"</span> {</div>
+                  <div class="t-line">  ami       = <span class="t-num">var</span>.ami_id</div>
+                  <div class="t-line">  user_data = <span class="t-key">file</span>(<span class="t-str">"setup.sh"</span>)</div>
+                  <div class="t-line">}</div>
+                  <div class="t-line t-cmt"># + aws_security_group.web</div>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>AWS Infrastructure with Terraform</h3>
+              <div>
+                <h4>What I built</h4>
+                <p>An AWS environment defined entirely as code. Terraform creates an EC2 instance, the Security Groups that control which ports are open, and a <code>user_data</code> script that sets the server up on first boot, so the same setup can be recreated or destroyed with a single command.</p>
+              </div>
+              <div>
+                <h4>Technologies</h4>
+                <div class="tags"><span class="tag">Terraform</span><span class="tag">AWS EC2</span><span class="tag">Security Groups</span><span class="tag">user_data</span><span class="tag">Linux</span></div>
+              </div>
+              <div class="project-foot">
+                <a class="btn btn-ghost" href="https://github.com/hammadrazzaq2k" target="_blank" rel="noopener"><span data-icon="github"></span>View on GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Goat Insights AI Platform -->
+          <!-- TODO: replace the GitHub link below with the exact repository URL -->
+          <article class="card project" id="goat-insights">
+            <div class="project-visual">
+              <div class="terminal" role="img" aria-label="Two Docker containers: a Next.js frontend and a FastAPI backend">
+                <div class="terminal-bar">
+                  <span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span class="terminal-title">docker compose ps</span>
+                </div>
+                <div class="terminal-body" aria-hidden="true">
+                  <div class="t-line"><span class="t-key">frontend</span>  Next.js   <span class="t-ok">running</span></div>
+                  <div class="t-line"><span class="t-key">backend</span>   FastAPI   <span class="t-ok">running</span></div>
+                  <div class="t-line t-dim">both containerized with Docker</div>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Goat Insights AI Platform</h3>
+              <div>
+                <h4>What I built</h4>
+                <p>A full-stack AI platform packaged for deployment. The Next.js frontend and the FastAPI backend each run in their own Docker container, so the whole app builds and starts the same way on any machine.</p>
+              </div>
+              <div>
+                <h4>Technologies</h4>
+                <div class="tags"><span class="tag">Docker</span><span class="tag">Next.js</span><span class="tag">FastAPI</span><span class="tag">Python</span><span class="tag">JavaScript</span></div>
+              </div>
+              <div class="project-foot">
+                <a class="btn btn-ghost" href="https://github.com/hammadrazzaq2k" target="_blank" rel="noopener"><span data-icon="github"></span>View on GitHub</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card cta reveal">
+          <h2>More on GitHub</h2>
+          <p>Smaller experiments and work in progress live on my profile.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://github.com/hammadrazzaq2k" target="_blank" rel="noopener"><span data-icon="github"></span>github.com/hammadrazzaq2k</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

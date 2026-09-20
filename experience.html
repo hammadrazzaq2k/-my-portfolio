@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Experience | Hammad Razzaq</title>
+  <meta name="description" content="Hammad Razzaq's DevOps learning roadmap: Linux, Git, Docker, CI/CD, AWS, Terraform, and Kubernetes in progress.">
+  <meta name="theme-color" content="#0a0f1e">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header"></header>
+
+  <main id="main">
+
+    <section class="page-head">
+      <div class="container">
+        <p class="path rise" style="--i:0">~/experience</p>
+        <h1 class="rise" style="--i:1">My DevOps journey</h1>
+        <p class="lead rise" style="--i:2">Seven steps, in the order I learned them. Each one built on the last, and most ended in a project.</p>
+      </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="roadmap-layout">
+        <ol class="roadmap">
+
+          <li class="step" id="linux">
+            <span class="step-dot" aria-hidden="true">✓</span>
+            <div class="card step-card">
+              <div class="step-top">
+                <span class="step-num">01</span>
+                <h3>Linux</h3>
+                <span class="badge badge--done">Completed</span>
+              </div>
+              <p>Got comfortable on the command line with Ubuntu, shell scripting and everyday server administration. Every other tool on this list runs on top of it.</p>
+              <div class="tags"><span class="tag">Ubuntu</span><span class="tag">Shell scripting</span></div>
+            </div>
+          </li>
+
+          <li class="step" id="git">
+            <span class="step-dot" aria-hidden="true">✓</span>
+            <div class="card step-card">
+              <div class="step-top">
+                <span class="step-num">02</span>
+                <h3>Git</h3>
+                <span class="badge badge--done">Completed</span>
+              </div>
+              <p>Learned version control and the GitHub workflow: commits, branches and a clean history. It is also the trigger for the pipelines I built later.</p>
+              <div class="tags"><span class="tag">Git</span><span class="tag">GitHub</span></div>
+            </div>
+          </li>
+
+          <li class="step" id="docker">
+            <span class="step-dot" aria-hidden="true">✓</span>
+            <div class="card step-card">
+              <div class="step-top">
+                <span class="step-num">03</span>
+                <h3>Docker</h3>
+                <span class="badge badge--done">Completed</span>
+              </div>
+              <p>Packaged applications into images and containers so they run the same everywhere, and published images to Docker Hub.</p>
+              <div class="tags"><span class="tag">Docker</span><span class="tag">Docker Hub</span></div>
+              <div class="step-used">Used in <a href="projects.html#goat-insights">Goat Insights AI Platform</a></div>
+            </div>
+          </li>
+
+          <li class="step" id="cicd">
+            <span class="step-dot" aria-hidden="true">✓</span>
+            <div class="card step-card">
+              <div class="step-top">
+                <span class="step-num">04</span>
+                <h3>CI/CD</h3>
+                <span class="badge badge--done">Completed</span>
+              </div>
+              <p>Automated the build and deploy cycle with GitHub Actions, so pushing to main is the only manual step left.</p>
+              <div class="tags"><span class="tag">GitHub Actions</span><span class="tag">Automated deploys</span></div>
+              <div class="step-used">Used in <a href="projects.html#portfolio-cicd">Portfolio CI/CD Pipeline</a></div>
+            </div>
+          </li>
+
+          <li class="step" id="aws">
+            <span class="step-dot" aria-hidden="true">✓</span>
+            <div class="card step-card">
+              <div class="step-top">
+                <span class="step-num">05</span>
+                <h3>AWS</h3>
+                <span class="badge badge--done">Completed</span>
+              </div>
+              <p>Worked hands-on with the core AWS services: running servers on EC2, storing files in S3, controlling access with IAM, and locking down networks with VPC and Security Groups.</p>
+              <div class="tags"><span class="tag">EC2</span><span class="tag">S3</span><span class="tag">IAM</span><span class="tag">VPC</span><span class="tag">Security Groups</span></div>
+            </div>
+          </li>
+
+          <li class="step step--to-next" id="terraform">
+            <span class="step-dot" aria-hidden="true">✓</span>
+            <div class="card step-card">
+              <div class="step-top">
+                <span class="step-num">06</span>
+                <h3>Terraform</h3>
+                <span class="badge badge--done">Completed</span>
+              </div>
+              <p>Replaced clicking through the AWS console with code. Servers, Security Groups and first-boot setup are now described in files I can review, version and reuse.</p>
+              <div class="tags"><span class="tag">Terraform</span><span class="tag">Infrastructure as code</span></div>
+              <div class="step-used">Used in <a href="projects.html#terraform-aws">AWS Infrastructure with Terraform</a></div>
+            </div>
+          </li>
+
+          <li class="step step--now" id="kubernetes">
+            <span class="step-dot" aria-hidden="true"></span>
+            <div class="card step-card">
+              <div class="step-top">
+                <span class="step-num">07</span>
+                <h3>Kubernetes</h3>
+                <span class="badge badge--now">In progress</span>
+              </div>
+              <p>Learning how container orchestration runs and scales workloads. It is the natural next step after Docker, CI/CD and Terraform.</p>
+              <div class="tags"><span class="tag">Kubernetes</span><span class="tag">Containers</span></div>
+            </div>
+          </li>
+
+        </ol>
+
+        <aside class="roadmap-side" aria-hidden="true">
+          <div class="terminal">
+            <div class="terminal-bar">
+              <span class="terminal-dots"><i></i><i></i><i></i></span>
+              <span class="terminal-title">journey — status</span>
+            </div>
+            <div class="terminal-body">
+              <div class="t-line"><span class="t-prompt">$</span>devops status</div>
+              <div class="t-line t-ok">✓ linux</div>
+              <div class="t-line t-ok">✓ git</div>
+              <div class="t-line t-ok">✓ docker</div>
+              <div class="t-line t-ok">✓ ci/cd</div>
+              <div class="t-line t-ok">✓ aws</div>
+              <div class="t-line t-ok">✓ terraform</div>
+              <div class="t-line" style="color: var(--amber)">… kubernetes (in progress)</div>
+              <div class="t-line"><span class="t-prompt">$</span><span class="t-cursor"></span></div>
+            </div>
+          </div>
+        </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Background -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Background</h2>
+          <p>Where the journey started, before the DevOps work.</p>
+        </div>
+        <div class="background-grid" data-stagger>
+          <article class="card">
+            <span class="when">2025 to present</span>
+            <h3>DevOps self-learning program</h3>
+            <p class="where">Independent, Netherlands</p>
+            <p>Building a DevOps skill set through hands-on projects, from Linux and Git to Docker, AWS, CI/CD with GitHub Actions and Terraform. Kubernetes is next.</p>
+          </article>
+          <article class="card">
+            <span class="when">2024 to 2025</span>
+            <h3>Final year project: AI platform</h3>
+            <p class="where">University, Software Engineering</p>
+            <p>Developed and containerized Goat Insights, an AI-powered livestock analytics platform, applying Docker and Next.js.</p>
+          </article>
+          <article class="card">
+            <span class="when">2021 to 2025</span>
+            <h3>Bachelor of Software Engineering</h3>
+            <p class="where">University</p>
+            <p>Studied software engineering with a focus on systems, networks and software architecture, and built a foundation in Linux and programming.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="card cta reveal">
+          <h2>Want to talk about the next step?</h2>
+          <p>I'm looking for a junior DevOps role where I can keep learning on real infrastructure.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="contact.html">Contact me</a>
+            <a class="btn btn-ghost" href="projects.html">View projects</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
